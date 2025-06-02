@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for the Program Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .tab.active {
+            border-color: #0d9488; /* teal-600 */
+            color: #0d9488; /* teal-600 */
+            font-weight: 600;
+        }
+        .schematic-arrow {
+            font-size: 2rem;
+            color: #cbd5e1; /* slate-300 */
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <div id="app" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <header class="text-center mb-10 md:mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-2">AI for the Program Architect</h1>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto">An interactive guide to leveraging Artificial Intelligence in your strategic role, from evangelism to governance.</p>
+        </header>
+
+        <nav class="mb-10">
+            <div id="tabs-container" class="border-b border-slate-200 flex justify-center space-x-4 md:space-x-8">
+            </div>
+        </nav>
+
+        <main id="content-container">
+        </main>
+    </div>
+
+    <script>
+        const appData = [
+            {
+                id: 'knowledge',
+                category: 'Obvious Recommendation',
+                title: 'AI-Powered Knowledge Management',
+                short_desc: 'Rapidly access and synthesize vast amounts of information to accelerate preparation and ensure quality in architectural recommendations.',
+                help: [
+                    'Rapidly access and synthesize information (case studies, architectural patterns, SOGAF principles, Salesforce updates, regulatory changes).',
+                    'Accelerate preparation for client engagements and executive presentations.',
+                    'Ensure consistency and high quality in your architectural recommendations and CoE setup advice.',
+                    'Quickly identify relevant ROI figures and best practices from past initiatives.'
+                ],
+                leverage: 'Implement or utilize an AI-powered knowledge management system. This system would ingest diverse documents and data sources. Use natural language queries to find specific information, generate summaries, and identify patterns or best practices tailored to your needs.',
+                schematic: {
+                    inputs: [
+                        { icon: '📄', label: 'Internal Case Studies' },
+                        { icon: '☁️', label: 'Salesforce Docs' },
+                        { icon: '🏗️', label: 'SOGAF Frameworks' },
+                        { icon: '📰', label: 'Industry Research' },
+                        { icon: '⚖️', label: 'Regulatory Guidelines' }
+                    ],
+                    engine: {
+                        name: 'AI Knowledge Engine',
+                        labels: ['NLP', 'Info Retrieval', 'Pattern Recognition']
+                    },
+                    outputs: [
+                        { icon: '💡', label: 'Curated Insights' },
+                        { icon: '✅', label: 'Synthesized Best Practices' },
+                        { icon: '🗺️', label: 'Relevant Architectural Patterns' },
+                        { icon: '🗣️', label: 'Data-Backed Talking Points' }
+                    ]
+                }
+            },
+            {
+                id: 'roi',
+                category: 'Obvious Recommendation',
+                title: 'AI-Assisted ROI & Business Case Generation',
+                short_desc: 'Streamline the creation of compelling, data-backed business cases to support executive evangelism and strategic alignment.',
+                help: [
+                    'Streamline the creation of compelling, data-backed business cases for AI initiatives.',
+                    'More rapidly model and forecast potential ROI, supporting your evangelism to CIOs and business executives.',
+                    'Free up time to focus on strategic alignment, client relationship building, and refining the narrative.'
+                ],
+                leverage: 'Use AI tools designed for financial modeling and business case development. These tools could integrate with industry benchmark data, your firm\'s anonymized past project data, and potentially client-specific data (with permission) to generate baseline projections for KPIs.',
+                schematic: {
+                    inputs: [
+                        { icon: '📊', label: 'Industry Benchmarks' },
+                        { icon: '🗂️', label: 'Firm\'s Historical Data' },
+                        { icon: '🎯', label: 'Client Operational Metrics' },
+                        { icon: '📝', label: 'Proposed Initiative Scope' }
+                    ],
+                    engine: {
+                        name: 'AI ROI & Business Case Modeler',
+                        labels: ['Predictive Analytics', 'Forecasting', 'Narrative Generation']
+                    },
+                    outputs: [
+                        { icon: '📈', label: 'ROI Projection Reports' },
+                        { icon: '📑', label: 'Draft Business Cases' },
+                        { icon: ' prezentare', label: 'Key Metrics & Charts' },
+                        { icon: '🎲', label: 'Scenario Analysis' }
+                    ]
+                }
+            },
+            {
+                id: 'evangelism',
+                category: 'Non-Obvious Recommendation',
+                title: 'AI for Evangelism Personalization',
+                short_desc: 'Tailor your message to individual executives by understanding their specific concerns, priorities, and communication styles.',
+                help: [
+                    'Tailor your evangelism efforts more effectively to individual CIOs and Business Executives.',
+                    'Increase buy-in for complex transformations by addressing latent concerns or aligning with unstated motivations.',
+                    'Proactively shape your messaging to resonate more deeply and effectively.'
+                ],
+                leverage: 'Utilize AI tools for analyzing communication patterns (e.g., aggregated themes from public statements, industry interviews – always respecting privacy and consent). The AI could identify recurring themes, key terminology, or areas of expressed interest to help you tailor your pitch.',
+                schematic: {
+                    inputs: [
+                        { icon: '🎙️', label: 'Public Executive Statements' },
+                        { icon: '📺', label: 'Industry Conference Talks' },
+                        { icon: '📢', label: 'Anonymized Comm. Themes' }
+                    ],
+                    engine: {
+                        name: 'AI Stakeholder Insights Engine',
+                        labels: ['NLU', 'Sentiment Analysis', 'Topic Modeling']
+                    },
+                    outputs: [
+                        { icon: '👤', label: 'Stakeholder Profiles' },
+                        { icon: '✍️', label: 'Tailored Messaging' },
+                        { icon: '🔑', label: 'Suggested Talking Points' },
+                        { icon: '🤝', label: 'Alignment/Objection Areas' }
+                    ]
+                }
+            },
+            {
+                id: 'governance',
+                category: 'Non-Obvious Recommendation',
+                title: 'AI-Driven Governance Gap Prediction',
+                short_desc: 'Move from reactive to proactive governance by predicting potential roadblocks, skill gaps, and deviations from architectural principles.',
+                help: [
+                    'Move from reactive to proactive governance of AI initiatives and Centers of Excellence.',
+                    'Predict potential roadblocks, skill gaps, tool adoption issues, or deviations from SOGAF principles before they escalate.',
+                    'Ensure smoother AI adoption and better achievement of the target KPIs for client AI programs.'
+                ],
+                leverage: 'Develop or use an AI model that analyzes operational data from ongoing AI projects and CoE activities. The model would identify patterns that historically precede common challenges, allowing you to suggest preemptive interventions.',
+                schematic: {
+                    inputs: [
+                        { icon: '📅', label: 'AI Project Mgmt Data' },
+                        { icon: '🏫', label: 'CoE Activity Logs' },
+                        { icon: '🔬', label: 'AI Model Dev Metrics' },
+                        { icon: '🛠️', label: 'Tool Adoption Data' },
+                        { icon: '📜', label: 'SOGAF Compliance Data' }
+                    ],
+                    engine: {
+                        name: 'AI Governance Predictive Engine',
+                        labels: ['Anomaly Detection', 'Risk Scoring', 'Predictive Modeling']
+                    },
+                    outputs: [
+                        { icon: '🚨', label: 'Early Warning Alerts' },
+                        { icon: '🛡️', label: 'Predictive Risk Dashboard' },
+                        { icon: '👨‍🏫', label: 'Intervention Recommendations' },
+                        { icon: '💸', label: 'Forecasted KPI Impact' }
+                    ]
+                }
+            }
+        ];
+
+        const tabsContainer = document.getElementById('tabs-container');
+        const contentContainer = document.getElementById('content-container');
+        let activeTab = appData[0].id;
+
+        function renderTabs() {
+            tabsContainer.innerHTML = appData.map(item => `
+                <button 
+                    data-id="${item.id}" 
+                    class="tab text-sm md:text-base font-medium py-3 px-2 md:px-4 border-b-2 border-transparent text-slate-500 hover:text-slate-700 transition-colors duration-200 whitespace-nowrap ${item.id === activeTab ? 'active' : ''}">
+                    ${item.title}
+                </button>
+            `).join('');
+        }
+
+        function renderContent() {
+            const item = appData.find(d => d.id === activeTab);
+            if (!item) return;
+
+            contentContainer.innerHTML = `
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-10 animate-fade-in">
+                    <div class="mb-8">
+                        <span class="text-sm font-semibold text-teal-700 bg-teal-100 rounded-full px-3 py-1">${item.category}</span>
+                        <h2 class="text-3xl font-bold text-slate-900 mt-3">${item.title}</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-slate-800">How It Helps You</h3>
+                            <ul class="space-y-2 list-disc list-inside text-slate-600">
+                                ${item.help.map(h => `<li>${h}</li>`).join('')}
+                            </ul>
+
+                            <h3 class="text-xl font-semibold mt-8 mb-3 text-slate-800">How to Leverage AI</h3>
+                            <p class="text-slate-600">${item.leverage}</p>
+                        </div>
+                        
+                        <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+                            <h3 class="text-xl font-semibold mb-4 text-center text-slate-800">Conceptual Schematic</h3>
+                            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                                <div class="flex-1 w-full">
+                                    <h4 class="font-semibold text-center mb-2 text-slate-700">Inputs</h4>
+                                    <div class="space-y-2">
+                                        ${item.schematic.inputs.map(i => `
+                                            <div class="bg-white p-2 rounded-md shadow-sm border border-slate-100 text-sm text-center">${i.icon} ${i.label}</div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                                
+                                <div class="schematic-arrow transform md:-rotate-0 rotate-90">→</div>
+                                
+                                <div class="flex-1 w-full">
+                                    <h4 class="font-semibold text-center mb-2 text-slate-700">AI Engine</h4>
+                                    <div class="bg-white p-3 rounded-lg shadow-md border-2 border-teal-500 text-center">
+                                        <div class="font-bold text-teal-800">${item.schematic.engine.name}</div>
+                                        <div class="text-xs text-teal-600 mt-1">${item.schematic.engine.labels.join(' • ')}</div>
+                                    </div>
+                                </div>
+
+                                <div class="schematic-arrow transform md:-rotate-0 rotate-90">→</div>
+
+                                <div class="flex-1 w-full">
+                                    <h4 class="font-semibold text-center mb-2 text-slate-700">Outputs</h4>
+                                    <div class="space-y-2">
+                                        ${item.schematic.outputs.map(o => `
+                                            <div class="bg-white p-2 rounded-md shadow-sm border border-slate-100 text-sm text-center">${o.icon} ${o.label}</div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Add a simple fade-in animation
+            const contentEl = contentContainer.firstElementChild;
+            if (contentEl) {
+                contentEl.style.opacity = 0;
+                contentEl.style.transition = 'opacity 0.5s ease-in-out';
+                setTimeout(() => contentEl.style.opacity = 1, 10);
+            }
+        }
+        
+        tabsContainer.addEventListener('click', (e) => {
+            if (e.target.matches('.tab')) {
+                activeTab = e.target.dataset.id;
+                renderTabs();
+                renderContent();
+            }
+        });
+
+        // Initial Render
+        renderTabs();
+        renderContent();
+
+    </script>
+</body>
+</html>
