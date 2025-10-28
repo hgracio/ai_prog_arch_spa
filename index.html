@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <image src="https://en.m.wikipedia.org/wiki/File:Salesforce.com_logo.svg"> </image>
     <title>AI for the Program Architect</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -56,7 +55,7 @@
                     'Ensure consistency and high quality in your architectural recommendations and CoE setup advice.',
                     'Quickly identify relevant ROI figures and best practices from past initiatives.'
                 ],
-                leverage: 'Implement or utilize an AI-powered knowledge management system. This system would ingest diverse documents and data sources. Use natural language queries to find specific information, generate summaries, and identify patterns or best practices tailored to your needs.',
+                leverage: 'Implement or utilize an AI-powered knowledge management system that ingests documents, presentations, and operational data. Use natural language queries and summarization to surface relevant insights quickly, and integrate with your team\'s workflow (e.g., search, Slack, or Confluence) to accelerate prep and ensure consistency in recommendations.',
                 schematic: {
                     inputs: [
                         { icon: '📄', label: 'Internal Case Studies' },
@@ -70,7 +69,7 @@
                         labels: ['NLP', 'Info Retrieval', 'Pattern Recognition']
                     },
                     outputs: [
-                        { icon: '💡', label: 'Curated Insights from Projects' },
+                        { icon: '💡', label: 'Curated Insights' },
                         { icon: '✅', label: 'Synthesized Best Practices' },
                         { icon: '🗺️', label: 'Relevant Architectural Patterns' },
                         { icon: '🗣️', label: 'Data-Backed Talking Points' }
@@ -85,14 +84,14 @@
                 help: [
                     'Streamline the creation of compelling, data-backed business cases for AI initiatives.',
                     'More rapidly model and forecast potential ROI, supporting your evangelism to CIOs and business executives.',
-                    'Free up time to focus on strategic alignment, client relationship building and refining the narrative.'
+                    'Free up time to focus on strategic alignment, client relationship building, and refining the narrative.'
                 ],
-                leverage: 'Use AI tools designed for financial modeling and business case development. These tools could integrate with industry benchmark data, your firm\'s anonymized past project data, and potentially client-specific data (with permission) to generate baseline projections for KPIs.',
+                leverage: 'Use AI tools for financial modeling and narrative generation that integrate industry benchmarks and your firm\'s anonymized historical data. Automate scenario analysis and chart generation to produce drafts you can refine and present to stakeholders.',
                 schematic: {
                     inputs: [
                         { icon: '📊', label: 'Industry Benchmarks' },
                         { icon: '🗂️', label: 'Firm\'s Historical Data' },
-                        { icon: '🎯', label: 'Client Operational Metrics-KPIs' },
+                        { icon: '🎯', label: 'Client Operational Metrics' },
                         { icon: '📝', label: 'Proposed Initiative Scope' }
                     ],
                     engine: {
@@ -102,7 +101,7 @@
                     outputs: [
                         { icon: '📈', label: 'ROI Projection Reports' },
                         { icon: '📑', label: 'Draft Business Cases' },
-                        { icon: ' prezentare', label: 'Key Metrics & Charts' },
+                        { icon: '📊', label: 'Key Metrics & Charts' },
                         { icon: '🎲', label: 'Scenario Analysis' }
                     ]
                 }
@@ -117,7 +116,7 @@
                     'Increase buy-in for complex transformations by addressing latent concerns or aligning with unstated motivations.',
                     'Proactively shape your messaging to resonate more deeply and effectively.'
                 ],
-                leverage: 'Utilize AI tools for analyzing communication patterns (e.g., aggregated themes from public statements, industry interviews – always respecting privacy and consent). The AI could identify recurring themes, key terminology, or areas of expressed interest to help you tailor your pitch.',
+                leverage: 'Utilize AI tools for analyzing aggregated, public communication (e.g., published interviews, keynote transcripts) to extract themes and communication styles. Always respect privacy and consent; aggregate insights to create stakeholder profiles and tailored messaging.',
                 schematic: {
                     inputs: [
                         { icon: '🎙️', label: 'Public Executive Statements' },
@@ -146,7 +145,7 @@
                     'Predict potential roadblocks, skill gaps, tool adoption issues, or deviations from SOGAF principles before they escalate.',
                     'Ensure smoother AI adoption and better achievement of the target KPIs for client AI programs.'
                 ],
-                leverage: 'Develop or use an AI model that analyzes operational data from ongoing AI projects and CoE activities. The model would identify patterns that historically precede common challenges, allowing you to suggest preemptive interventions.',
+                leverage: 'Develop or use an AI model that analyzes operational data from ongoing AI projects and CoE activities to identify patterns that precede common challenges. Surface early warnings and recommended interventions through dashboards and notifications.',
                 schematic: {
                     inputs: [
                         { icon: '📅', label: 'AI Project Mgmt Data' },
@@ -174,10 +173,11 @@
         let activeTab = appData[0].id;
 
         function renderTabs() {
-            tabsContainer.innerHTML = appData.map(item => `
+            tabsContainer.innerHTML = appData.map((item, i) => `
                 <button 
                     data-id="${item.id}" 
-                    class="tab text-sm md:text-base font-medium py-3 px-2 md:px-4 border-b-2 border-transparent text-slate-500 hover:text-slate-700 transition-colors duration-200 whitespace-nowrap ${item.id === activeTab ? 'active' : ''}">
+                    class="tab text-sm md:text-base font-medium py-3 px-2 md:px-4 border-b-2 border-transparent text-slate-500 hover:text-slate-700 transition-colors duration-200 whitespace-nowrap ${item.id === activeTab ? 'active' : ''}"
+                >
                     ${item.title}
                 </button>
             `).join('');
