@@ -55,7 +55,7 @@
                     'Ensure consistency and high quality in your architectural recommendations and CoE setup advice.',
                     'Quickly identify relevant ROI figures and best practices from past initiatives.'
                 ],
-                leverage: 'Implement or utilize an AI-powered knowledge management system that ingests documents, presentations, and operational data. Use natural language queries and summarization to surface relevant insights quickly, and integrate with your team\'s workflow (e.g., search, Slack, or Confluence) to accelerate prep and ensure consistency in recommendations.',
+                leverage: 'Implement or utilize an AI-powered knowledge management system. This system would ingest diverse documents and data sources. Use natural language queries to find specific in[...]',
                 schematic: {
                     inputs: [
                         { icon: '📄', label: 'Internal Case Studies' },
@@ -86,7 +86,7 @@
                     'More rapidly model and forecast potential ROI, supporting your evangelism to CIOs and business executives.',
                     'Free up time to focus on strategic alignment, client relationship building, and refining the narrative.'
                 ],
-                leverage: 'Use AI tools for financial modeling and narrative generation that integrate industry benchmarks and your firm\'s anonymized historical data. Automate scenario analysis and chart generation to produce drafts you can refine and present to stakeholders.',
+                leverage: 'Use AI tools designed for financial modeling and business case development. These tools could integrate with industry benchmark data, your firm\'s anonymized past project da[...]',
                 schematic: {
                     inputs: [
                         { icon: '📊', label: 'Industry Benchmarks' },
@@ -101,7 +101,7 @@
                     outputs: [
                         { icon: '📈', label: 'ROI Projection Reports' },
                         { icon: '📑', label: 'Draft Business Cases' },
-                        { icon: '📊', label: 'Key Metrics & Charts' },
+                        { icon: ' prezentare', label: 'Key Metrics & Charts' },
                         { icon: '🎲', label: 'Scenario Analysis' }
                     ]
                 }
@@ -116,7 +116,7 @@
                     'Increase buy-in for complex transformations by addressing latent concerns or aligning with unstated motivations.',
                     'Proactively shape your messaging to resonate more deeply and effectively.'
                 ],
-                leverage: 'Utilize AI tools for analyzing aggregated, public communication (e.g., published interviews, keynote transcripts) to extract themes and communication styles. Always respect privacy and consent; aggregate insights to create stakeholder profiles and tailored messaging.',
+                leverage: 'Utilize AI tools for analyzing communication patterns (e.g., aggregated themes from public statements, industry interviews – always respecting privacy and consent). The AI[...]',
                 schematic: {
                     inputs: [
                         { icon: '🎙️', label: 'Public Executive Statements' },
@@ -145,7 +145,7 @@
                     'Predict potential roadblocks, skill gaps, tool adoption issues, or deviations from SOGAF principles before they escalate.',
                     'Ensure smoother AI adoption and better achievement of the target KPIs for client AI programs.'
                 ],
-                leverage: 'Develop or use an AI model that analyzes operational data from ongoing AI projects and CoE activities to identify patterns that precede common challenges. Surface early warnings and recommended interventions through dashboards and notifications.',
+                leverage: 'Develop or use an AI model that analyzes operational data from ongoing AI projects and CoE activities. The model would identify patterns that historically precede common cha[...]',
                 schematic: {
                     inputs: [
                         { icon: '📅', label: 'AI Project Mgmt Data' },
@@ -165,123 +165,104 @@
                         { icon: '💸', label: 'Forecasted KPI Impact' }
                     ]
                 }
-            },
-            {
-                id: 'agentic',
-                category: 'Framework',
-                title: 'Agentic Enterprise',
-                full_html: `
-                <style>
-                    /* scoped styles for Agentic Enterprise tab */
-                    .ae-body { font-family: 'Inter', sans-serif; color: #001219; background: transparent; }
-                    .ae-header { background: #005f73; color: white; padding: 2.5rem; border-radius: 0.5rem; }
-                    .chart-container { position: relative; width: 100%; max-width: 600px; margin-left: auto; margin-right: auto; height: 320px; max-height: 400px; }
-                    @media (min-width: 768px) { .chart-container { height: 384px; } }
-                    .flow-arrow { font-size: 2rem; color: #94d2bd; font-weight: bold; margin: 0.5rem 0; }
-                    .timeline-item { position: relative; padding-bottom: 2rem; padding-left: 2.5rem; border-left: 4px solid #0a9396; }
-                    .timeline-item:last-child { border-left: 4px solid transparent; padding-bottom: 0; }
-                    .timeline-dot { position: absolute; left: -0.875rem; top: 0.25rem; height: 1.5rem; width: 1.5rem; background-color: #ee9b00; border-radius: 50%; border: 4px solid #f8fafc; }
-                </style>
-
-                <div class="ae-body">
-                    <header class="ae-header text-center mb-8">
-                        <div class="max-w-4xl mx-auto">
-                            <h2 class="text-3xl md:text-4xl font-extrabold">The Agentic Enterprise</h2>
-                            <p class="text-[#94d2bd] mt-2">A Strategic Framework for Scaling Enterprise AI</p>
-                        </div>
-                    </header>
-
-                    <main class="space-y-8">
-                        <section class="bg-white rounded-lg p-6 shadow">
-                            <h3 class="text-2xl font-bold mb-4">I. Assessing Enterprise Readiness</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                <div class="p-4 border-l-4 border-[#0a9396] bg-gray-50 rounded"> <h4 class="font-bold">Business Goal Alignment</h4><p class="text-sm text-gray-600">What measurable KPIs are driving this initiative beyond the pilot?</p></div>
-                                <div class="p-4 border-l-4 border-[#0a9396] bg_gray-50 rounded"> <h4 class="font-bold">Data Foundation</h4><p class="text-sm text-gray-600">What percentage of critical knowledge is unified, high-quality, and accessible for production?</p></div>
-                                <div class="p-4 border-l-4 border-[#0a9396] bg-gray-50 rounded"> <h4 class="font-bold">Governance Structure</h4><p class="text-sm text_gray-600">Is a dedicated Agentic CoE established with clear, joint accountability for risk management?</p></div>
-                                <div class="p-4 border-l-4 border-[#0a9396] bg-gray-50 rounded"> <h4 class="font-bold">Architectural Fit</h4><p class="text-sm text-gray-600">How will multi-agent coordination (A2A) and policy (MCP) be managed across disparate systems?</p></div>
-                            </div>
-                        </section>
-
-                        <section class="bg-white rounded-lg p-6 shadow">
-                            <h3 class="text-2xl font-bold mb-4">II. Analysis of Scaling Barriers</h3>
-                            <div class="chart-container"><canvas id="aeBarrierChart"></canvas></div>
-                        </section>
-
-                        <section class="bg-white rounded-lg p-6 shadow">
-                            <h3 class="text-2xl font-bold mb-4">III. Compliant Architectural Design</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                <div class="p-4 bg-gray-50 rounded"><h4 class="font-bold text-[#005f73]">Data Foundation</h4><p class="text-sm text-gray-600">Data Cloud (Data 360) as the unified context engine.</p></div>
-                                <div class="p-4 bg-gray-50 rounded"><h4 class="font-bold text-[#005f73]">Integration & Action</h4><p class="text-sm text-gray-600">MuleSoft Agent Fabric to discover, govern, and observe actions.</p></div>
-                                <div class="p-4 bg-gray-50 rounded"><h4 class="font-bold text-[#005f73]">Trust & Security</h4><p class="text-sm text-gray-600">Einstein Trust Layer for masking, defense, and audit trails.</p></div>
-                            </div>
-                        </section>
-
-                        <section class="bg-white rounded-lg p-6 shadow">
-                            <h3 class="text-2xl font-bold mb-4">IV. Strategic Roadmap for Scaling</h3>
-                            <div class="relative">
-                                <div class="timeline-item"><div class="timeline-dot"></div><h4 class="font-bold text-[#005f73]">Level 1: Specialized Contributor</h4><p class="text-sm text_gray-600">Focus on information retrieval, Q&A, and establishing guardrails.</p></div>
-                                <div class="timeline-item"><div class="timeline-dot"></div><h4 class="font-bold text-[#005f73]">Level 2: Seamless Collaborator</h4><p class="text-sm text-gray-600">Agents execute tasks with a single skill in one domain.</p></div>
-                                <div class="timeline-item"><div class="timeline-dot"></div><h4 class="font-bold text-[#005f73]">Level 3: Business Orchestrator</h4><p class="text-sm text-gray-600">Agents orchestrate complex workflows spanning multiple departments and systems.</p></div>
-                                <div class="timeline-item"><div class="timeline-dot"></div><h4 class="font-bold text-[#005f73]">Level 4: Multi-Agent Orchestration</h4><p class="text-sm text-gray-600">Agents coordinate across organizational boundaries (A2A/MCP).</p></div>
-                            </div>
-                        </section>
-
-                        <section class="bg-white rounded-lg p-6 shadow">
-                            <h3 class="text-2xl font-bold mb-4">V. Continuous Improvement Loop (ALM)</h3>
-                            <div class="chart-container"><canvas id="aeAlmChart"></canvas></div>
-                        </section>
-
-                        <section class="bg-white rounded-lg p-6 shadow">
-                            <h3 class="text-2xl font-bold mb-4">VI. Organizational Enablement</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="p-4 bg-gray-50 rounded"><h4 class="font-bold text-[#005f73]">Establish Joint Accountability</h4></div>
-                                <div class="p-4 bg-gray-50 rounded"><h4 class="font-bold text-[#005f73]">Define Clear Roles</h4></div>
-                                <div class="p-4 bg-gray-50 rounded"><h4 class="font-bold text-[#005f73]">Mandate Self-Sufficiency</h4></div>
-                                <div class="p-4 bg-gray-50 rounded"><h4 class="font-bold text-[#005f73]">Prioritize Process Reinvention</h4></div>
-                            </div>
-                        </section>
-                    </main>
-
-                    <footer class="text-center text-sm text-gray-500 mt-6">© 2025 AI Enterprise Architecture Initiative</footer>
-
-                    <script>
-                        // chart helpers (scoped to Agentic Enterprise tab)
-                        function aeWrapLabel(label) {
-                            const max = 16;
-                            if (label.length <= max) return label;
-                            const words = label.split(' ');
-                            const lines = []; let currentLine = '';
-                            for (const word of words) {
-                                if ((currentLine + word).length > max) { lines.push(currentLine.trim()); currentLine = ''; }
-                                currentLine += word + ' ';
-                            }
-                            lines.push(currentLine.trim());
-                            return lines;
-                        }
-                        const aePalette = { darkTeal:'#005f73', mediumTeal:'#0a9396', lightTeal:'#94d2bd', orange:'#ee9b00', darkOrange:'#ca6702', burntOrange:'#bb3e03', text:'#001219' };
-                        function renderAeBarrier() {
-                            const el = document.getElementById('aeBarrierChart');
-                            if (!el) return;
-                            const ctx = el.getContext('2d');
-                            const labels = ['Data Preparedness','Organizational/Skills Gap','Governance & Compliance','Cost Visibility (TCO)','Architectural Friction (CI/CD)'].map(aeWrapLabel);
-                            new Chart(ctx, {
-                                type:'radar', data:{ labels, datasets:[{ label:'Severity', data:[9,8,7,9,6], fill:true, backgroundColor:'rgba(238,155,0,0.2)', borderColor:aePalette.orange, pointBackgroundColor:aePalette.orange } ] }, options:{ maintainAspectRatio:false, responsive:true, scales:{ r:{ angleLines:{ color:'#ddd' }, grid:{ color:'#eee' }, pointLabels:{ color:aePalette.text, font:{ size:13 } }, ticks:{ backdropColor:'white', color:'#777', stepSize:2, beginAtZero:true, max:10 } } }, plugins:{ legend:{ display:false } } }
-                            });
-                        }
-                        function renderAeAlm() {
-                            const el = document.getElementById('aeAlmChart');
-                            if (!el) return;
-                            const ctx = el.getContext('2d');
-                            const labels = ['Ideate','Build & Configure','Test & Validate','Deploy','Monitor/Observe','Optimize & Refine'].map(aeWrapLabel);
-                            new Chart(ctx, { type:'doughnut', data:{ labels, datasets:[{ data:[1,1,1,1,1,1], backgroundColor:[aePalette.darkTeal,aePalette.mediumTeal,aePalette.lightTeal,aePalette.orange,aePalette.darkOrange,aePalette.burntOrange] }] }, options:{ maintainAspectRatio:false, responsive:true, cutout:'60%', plugins:{ legend:{ position:'bottom', labels:{ color:aePalette.text } } } } });
-                        }
-                        // run charts after this HTML is injected
-                        setTimeout(()=>{ try{ renderAeBarrier(); renderAeAlm(); }catch(e){console.warn('AE charts failed',e);} }, 50);
-                    </script>
-                </div>
-                `
             }
         ];
+
+        const tabsContainer = document.getElementById('tabs-container');
+        const contentContainer = document.getElementById('content-container');
+        let activeTab = appData[0].id;
+
+        function renderTabs() {
+            tabsContainer.innerHTML = appData.map(item => `
+                <button 
+                    data-id="${item.id}" 
+                    class="tab text-sm md:text-base font-medium py-3 px-2 md:px-4 border-b-2 border-transparent text-slate-500 hover:text-slate-700 transition-colors duration-200 whitespace-nowrap ${i[...] 
+                    ${item.title}
+                </button>
+            `).join('');
+        }
+
+        function renderContent() {
+            const item = appData.find(d => d.id === activeTab);
+            if (!item) return;
+
+            contentContainer.innerHTML = `
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-10 animate-fade-in">
+                    <div class="mb-8">
+                        <span class="text-sm font-semibold text-teal-700 bg-teal-100 rounded-full px-3 py-1">${item.category}</span>
+                        <h2 class="text-3xl font-bold text-slate-900 mt-3">${item.title}</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-slate-800">How It Helps You</h3>
+                            <ul class="space-y-2 list-disc list-inside text-slate-600">
+                                ${item.help.map(h => `<li>${h}</li>`).join('')}
+                            </ul>
+
+                            <h3 class="text-xl font-semibold mt-8 mb-3 text-slate-800">How to Leverage AI</h3>
+                            <p class="text-slate-600">${item.leverage}</p>
+                        </div>
+                        
+                        <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+                            <h3 class="text-xl font-semibold mb-4 text-center text-slate-800">Conceptual Schematic</h3>
+                            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                                <div class="flex-1 w-full">
+                                    <h4 class="font-semibold text-center mb-2 text-slate-700">Inputs</h4>
+                                    <div class="space-y-2">
+                                        ${item.schematic.inputs.map(i => `
+                                            <div class="bg-white p-2 rounded-md shadow-sm border border-slate-100 text-sm text-center">${i.icon} ${i.label}</div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                                
+                                <div class="schematic-arrow transform md:-rotate-0 rotate-90">→</div>
+                                
+                                <div class="flex-1 w-full">
+                                    <h4 class="font-semibold text-center mb-2 text-slate-700">AI Engine</h4>
+                                    <div class="bg-white p-3 rounded-lg shadow-md border-2 border-teal-500 text-center">
+                                        <div class="font-bold text-teal-800">${item.schematic.engine.name}</div>
+                                        <div class="text-xs text-teal-600 mt-1">${item.schematic.engine.labels.join(' • ')}</div>
+                                    </div>
+                                </div>
+
+                                <div class="schematic-arrow transform md:-rotate-0 rotate-90">→</div>
+
+                                <div class="flex-1 w-full">
+                                    <h4 class="font-semibold text-center mb-2 text-slate-700">Outputs</h4>
+                                    <div class="space-y-2">
+                                        ${item.schematic.outputs.map(o => `
+                                            <div class="bg-white p-2 rounded-md shadow-sm border border-slate-100 text-sm text-center">${o.icon} ${o.label}</div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Add a simple fade-in animation
+            const contentEl = contentContainer.firstElementChild;
+            if (contentEl) {
+                contentEl.style.opacity = 0;
+                contentEl.style.transition = 'opacity 0.5s ease-in-out';
+                setTimeout(() => contentEl.style.opacity = 1, 10);
+            }
+        }
+        
+        tabsContainer.addEventListener('click', (e) => {
+            if (e.target.matches('.tab')) {
+                activeTab = e.target.dataset.id;
+                renderTabs();
+                renderContent();
+            }
+        });
+
+        // Initial Render
+        renderTabs();
+        renderContent();
+
     </script>
 </body>
 </html>
